@@ -6123,6 +6123,15 @@ int iAmMaster(void) {
             (server.cluster_enabled && nodeIsMaster(server.cluster->myself)));
 }
 
+const char * monotonicInit() {
+    return monotonicInit();
+}
+
+void init_genrand64(unsigned long long seed)
+{
+    init_genrand64(seed);
+}
+
 #ifdef REDIS_TEST
 typedef int redisTestProc(int argc, char **argv, int accurate);
 struct redisTest {
@@ -6154,6 +6163,7 @@ redisTestProc *getTestProcByName(const char *name) {
 #endif
 
 int main(int argc, char **argv) {
+    printf("====================== redis main ==================== \n");
     struct timeval tv;
     int j;
     char config_from_stdin = 0;

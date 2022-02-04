@@ -1,3 +1,4 @@
+#include "lzfP.h"
 /* Hash Tables Implementation.
  *
  * This file implements in memory hash tables with insert/del/replace/find/

@@ -27,7 +27,6 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "mt19937-64.h"
 #include "server.h"
 #include "rdb.h"
 

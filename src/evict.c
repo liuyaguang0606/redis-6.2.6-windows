@@ -297,6 +297,8 @@ unsigned long LFUTimeElapsed(unsigned long ldt) {
  * the less likely is that it gets really implemented. Saturate it at 255. */
 uint8_t LFULogIncr(uint8_t counter) {
     if (counter == 255) return 255;
+    /* lyg  */
+    double rm = 0 ;
     double r = (double)rand()/RAND_MAX;
     double baseval = counter - LFU_INIT_VAL;
     if (baseval < 0) baseval = 0;

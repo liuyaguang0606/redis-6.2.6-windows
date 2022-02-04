@@ -83,6 +83,8 @@ lwCanvas *lwDrawSchotter(int console_cols, int squares_per_row, int squares_per_
             /* Rotate and translate randomly as we go down to lower
              * rows. */
             float angle = 0;
+            /* lyg */
+            double rm = 0;
             if (y > 1) {
                 float r1 = (float)rand() / (float) RAND_MAX / squares_per_col * y;
                 float r2 = (float)rand() / (float) RAND_MAX / squares_per_col * y;
