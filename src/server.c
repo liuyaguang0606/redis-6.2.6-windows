@@ -6122,11 +6122,11 @@ int iAmMaster(void) {
     return ((!server.cluster_enabled && server.masterhost == NULL) ||
             (server.cluster_enabled && nodeIsMaster(server.cluster->myself)));
 }
-
+/* 2022-02-05 解决编译报错问题 */
 const char * monotonicInit() {
     return monotonicInit();
 }
-
+/* 2022-02-05 解决编译报错问题 */
 void init_genrand64(unsigned long long seed)
 {
     init_genrand64(seed);
