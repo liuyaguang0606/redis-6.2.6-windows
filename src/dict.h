@@ -154,11 +154,12 @@ typedef void (dictScanBucketFunction)(void *privdata, dictEntry **bucketref);
 #define dictResumeRehashing(d) (d)->pauserehash--
 
 /* If our unsigned long type can store a 64 bit number, use a 64 bit PRNG. */
-#if ULONG_MAX >= 0xffffffffffffffff
-#define randomULong() ((unsigned long) genrand64_int64())
-#else
+/* lyg 处理编译错误问题 启动注释*/
+//#if ULONG_MAX >= 0xffffffffffffffff
+//#define randomULong() ((unsigned long) genrand64_int64())
+//#else
 #define randomULong() random()
-#endif
+//#endif
 
 /* API */
 dict *dictCreate(dictType *type, void *privDataPtr);

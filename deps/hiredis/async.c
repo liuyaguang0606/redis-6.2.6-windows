@@ -47,6 +47,14 @@
 
 #include "async_private.h"
 
+hiredisAllocFuncs hiredisAllocFns = {
+        .mallocFn = malloc,
+        .callocFn = calloc,
+        .reallocFn = realloc,
+        .strdupFn = strdup,
+        .freeFn = free,
+};
+
 /* Forward declarations of hiredis.c functions */
 int __redisAppendCommand(redisContext *c, const char *cmd, size_t len);
 void __redisSetError(redisContext *c, int type, const char *str);

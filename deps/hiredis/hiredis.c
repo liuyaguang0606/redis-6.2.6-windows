@@ -37,6 +37,7 @@
 #include <assert.h>
 #include <errno.h>
 #include <ctype.h>
+#include "read.h"
 
 #include "hiredis.h"
 #include "net.h"
@@ -1173,3 +1174,24 @@ void *redisCommandArgv(redisContext *c, int argc, const char **argv, const size_
         return NULL;
     return __redisBlockForReply(c);
 }
+
+
+/* start == TODO : LYG 处理编译错误 undefined reference to */
+
+void redisReaderFree(redisReader *r) {
+    redisReaderFree(r);
+}
+
+int redisReaderFeed(redisReader *r, const char *buf, size_t len){
+    return redisReaderFeed(r, buf, len);
+}
+
+int redisReaderGetReply(redisReader *r, void **reply) {
+    return redisReaderGetReply(r, reply);
+}
+
+redisReader *redisReaderCreateWithFunctions(redisReplyObjectFunctions *fn) {
+    return redisReaderCreateWithFunctions(&defaultFunctions);
+}
+
+/* end == TODO : LYG 处理编译错误 undefined reference to  */
